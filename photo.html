@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts：キウイマル -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>写真を加工する｜なにこれ</title>
+</head>
+
+
+<body class="photo-page">
+
+  <!-- ヘッダー -->
+  <header class="photo-header">
+
+    <a href="index.html" class="photo-logo">
+      なにこれ
+    </a>
+
+  </header>
+
+
+  <main class="photo-main">
+
+
+    <!-- =========================
+         写真エリア
+    ========================== -->
+
+    <section class="editor-area">
+
+      <!-- 写真を表示する場所 -->
+      <div id="photoCanvas" class="photo-canvas">
+
+        <div id="photoPlaceholder" class="photo-placeholder">
+
+          <div class="camera-icon">
+            📷
+          </div>
+
+          <p>
+            写真を選んでね！
+          </p>
+
+          <label class="photo-select-button">
+            写真を選択する
+            <input
+              type="file"
+              id="photoInput"
+              accept="image/*"
+              hidden
+            >
+          </label>
+
+        </div>
+
+
+        <!-- 選択した画像を表示 -->
+        <img
+          id="mainPhoto"
+          class="main-photo"
+          alt=""
+        >
+
+
+        <!-- 選んだイラストがここに追加される -->
+        <div id="stickerLayer"></div>
+
+      </div>
+
+      <button id="deleteStickerButton" class="delete-sticker-button">
+        選択中の素材を削除
+      </button>
+
+      <!-- 写真を選び直す -->
+      <label class="change-photo-button">
+
+        写真を変更する
+
+        <input
+          type="file"
+          id="changePhotoInput"
+          accept="image/*"
+          hidden
+        >
+
+      </label>
+
+    </section>
+
+
+    <!-- =========================
+         素材エリア
+    ========================== -->
+
+    <section class="sticker-panel">
+
+
+      <!-- カテゴリ -->
+      <nav class="category-tabs">
+
+        <button class="category-tab active" data-category="character">
+            キャラ
+        </button>
+
+        <button class="category-tab" data-category="stamp">
+            スタンプ
+        </button>
+
+        <button class="category-tab" data-category="text">
+            文字
+        </button>
+
+        <button class="category-tab" data-category="frame">
+            フレーム
+        </button>
+
+      </nav>
+
+
+      <div class="panel-title">
+
+        <span id="panelTitle">
+            CHARACTER
+        </span>
+
+        <p id="panelDescription">
+            好きなキャラクターを選んでね！
+        </p>
+
+      </div>
+
+      <div id="characterTypeArea" class="character-type-tabs">
+
+        <button
+            class="character-type-tab active"
+            data-type="body"
+        >
+            キャラクター
+        </button>
+
+        <button
+            class="character-type-tab"
+            data-type="face"
+        >
+            顔だけ
+        </button>
+
+      </div>
+
+
+      <!-- キャラクター一覧 -->
+      <div id="characterList" class="character-list">
+
+
+        <!-- ① 王様 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/king.png"
+          data-name="王様"
+        >
+          <img
+            src="images/characters1/king.png"
+            alt="王様"
+          >
+        </button>
+
+
+        <!-- ② 踊り子 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/dancer.png"
+          data-name="踊り子"
+        >
+          <img
+            src="images/characters1/dancer.png"
+            alt="踊り子"
+          >
+        </button>
+
+
+        <!-- ③ アーチャー -->
+        <button
+          class="character-item"
+          data-image="images/characters1/archer.png"
+          data-name="アーチャー"
+        >
+          <img
+            src="images/characters1/archer.png"
+            alt="アーチャー"
+          >
+        </button>
+
+
+        <!-- ④ 巫女 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/miko.png"
+          data-name="巫女"
+        >
+          <img
+            src="images/characters1/miko.png"
+            alt="巫女"
+          >
+        </button>
+
+
+        <!-- ⑤ 格闘家 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/fighter.png"
+          data-name="格闘家"
+        >
+          <img
+            src="images/characters1/fighter.png"
+            alt="格闘家"
+          >
+        </button>
+
+
+        <!-- ⑥ 商人 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/merchant.png"
+          data-name="商人"
+        >
+          <img
+            src="images/characters1/merchant.png"
+            alt="商人"
+          >
+        </button>
+
+
+        <!-- ⑦ 軍師 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/strategist.png"
+          data-name="軍師"
+        >
+          <img
+            src="images/characters1/strategist.png"
+            alt="軍師"
+          >
+        </button>
+
+
+        <!-- ⑧ 忍者 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/ninja.png"
+          data-name="忍者"
+        >
+          <img
+            src="images/characters1/ninja.png"
+            alt="忍者"
+          >
+        </button>
+
+
+        <!-- ⑨ 治癒師 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/healer.png"
+          data-name="治癒師"
+        >
+          <img
+            src="images/characters1/healer.png"
+            alt="治癒師"
+          >
+        </button>
+
+
+        <!-- ⑩ 僧侶 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/priest.png"
+          data-name="僧侶"
+        >
+          <img
+            src="images/characters1/priest.png"
+            alt="僧侶"
+          >
+        </button>
+
+
+        <!-- ⑪ 妖精 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/fairy.png"
+          data-name="妖精"
+        >
+          <img
+            src="images/characters1/fairy.png"
+            alt="妖精"
+          >
+        </button>
+
+
+        <!-- ⑫ 魔女 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/witch.png"
+          data-name="魔女"
+        >
+          <img
+            src="images/characters1/witch.png"
+            alt="魔女"
+          >
+        </button>
+
+
+        <!-- ⑬ 大道芸人 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/performer.png"
+          data-name="大道芸人"
+        >
+          <img
+            src="images/characters1/performer.png"
+            alt="大道芸人"
+          >
+        </button>
+
+
+        <!-- ⑭ 占い師 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/fortune.png"
+          data-name="占い師"
+        >
+          <img
+            src="images/characters1/fortune.png"
+            alt="占い師"
+          >
+        </button>
+
+
+        <!-- ⑮ 勇者 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/hero.png"
+          data-name="勇者"
+        >
+          <img
+            src="images/characters1/hero.png"
+            alt="勇者"
+          >
+        </button>
+
+
+        <!-- ⑯ 魔王 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/demon-king.png"
+          data-name="魔王"
+        >
+          <img
+            src="images/characters1/demon-king.png"
+            alt="魔王"
+          >
+        </button>
+
+
+        <!-- ⑰ 学者 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/scholar.png"
+          data-name="学者"
+        >
+          <img
+            src="images/characters1/scholar.png"
+            alt="学者"
+          >
+        </button>
+
+
+        <!-- ⑱ 賢者 -->
+        <button
+          class="character-item"
+          data-image="images/characters1/sage.png"
+          data-name="賢者"
+        >
+          <img
+            src="images/characters1/sage.png"
+            alt="賢者"
+          >
+        </button>
+
+
+      </div>
+
+      <div id="faceList" class="character-list" style="display: none;">
+
+
+        <!-- ① 王様 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/king.png"
+          data-name="王様"
+        >
+          <img
+            src="images/characters2/king.png"
+            alt="王様"
+          >
+        </button>
+
+
+        <!-- ② 踊り子 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/dancer.png"
+          data-name="踊り子"
+        >
+          <img
+            src="images/characters2/dancer.png"
+            alt="踊り子"
+          >
+        </button>
+
+
+        <!-- ③ アーチャー -->
+        <button
+          class="character-item"
+          data-image="images/characters2/archer.png"
+          data-name="アーチャー"
+        >
+          <img
+            src="images/characters2/archer.png"
+            alt="アーチャー"
+          >
+        </button>
+
+
+        <!-- ④ 巫女 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/miko.png"
+          data-name="巫女"
+        >
+          <img
+            src="images/characters2/miko.png"
+            alt="巫女"
+          >
+        </button>
+
+
+        <!-- ⑤ 格闘家 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/fighter.png"
+          data-name="格闘家"
+        >
+          <img
+            src="images/characters2/fighter.png"
+            alt="格闘家"
+          >
+        </button>
+
+
+        <!-- ⑥ 商人 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/merchant.png"
+          data-name="商人"
+        >
+          <img
+            src="images/characters2/merchant.png"
+            alt="商人"
+          >
+        </button>
+
+
+        <!-- ⑦ 軍師 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/strategist.png"
+          data-name="軍師"
+        >
+          <img
+            src="images/characters2/strategist.png"
+            alt="軍師"
+          >
+        </button>
+
+
+        <!-- ⑧ 忍者 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/ninja.png"
+          data-name="忍者"
+        >
+          <img
+            src="images/characters2/ninja.png"
+            alt="忍者"
+          >
+        </button>
+
+
+        <!-- ⑨ 治癒師 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/healer.png"
+          data-name="治癒師"
+        >
+          <img
+            src="images/characters2/healer.png"
+            alt="治癒師"
+          >
+        </button>
+
+
+        <!-- ⑩ 僧侶 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/priest.png"
+          data-name="僧侶"
+        >
+          <img
+            src="images/characters2/priest.png"
+            alt="僧侶"
+          >
+        </button>
+
+
+        <!-- ⑪ 妖精 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/fairy.png"
+          data-name="妖精"
+        >
+          <img
+            src="images/characters2/fairy.png"
+            alt="妖精"
+          >
+        </button>
+
+
+        <!-- ⑫ 魔女 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/witch.png"
+          data-name="魔女"
+        >
+          <img
+            src="images/characters2/witch.png"
+            alt="魔女"
+          >
+        </button>
+
+
+        <!-- ⑬ 大道芸人 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/performer.png"
+          data-name="大道芸人"
+        >
+          <img
+            src="images/characters2/performer.png"
+            alt="大道芸人"
+          >
+        </button>
+
+
+        <!-- ⑭ 占い師 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/fortune.png"
+          data-name="占い師"
+        >
+          <img
+            src="images/characters2/fortune.png"
+            alt="占い師"
+          >
+        </button>
+
+
+        <!-- ⑮ 勇者 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/hero.png"
+          data-name="勇者"
+        >
+          <img
+            src="images/characters2/hero.png"
+            alt="勇者"
+          >
+        </button>
+
+
+        <!-- ⑯ 魔王 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/demon-king.png"
+          data-name="魔王"
+        >
+          <img
+            src="images/characters2/demon-king.png"
+            alt="魔王"
+          >
+        </button>
+
+
+        <!-- ⑰ 学者 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/scholar.png"
+          data-name="学者"
+        >
+          <img
+            src="images/characters2/scholar.png"
+            alt="学者"
+          >
+        </button>
+
+
+        <!-- ⑱ 賢者 -->
+        <button
+          class="character-item"
+          data-image="images/characters2/sage.png"
+          data-name="賢者"
+        >
+          <img
+            src="images/characters2/sage.png"
+            alt="賢者"
+          >
+      </div>
+
+      <!-- =========================
+        スタンプ一覧
+      ========================== -->
+
+      <div id="stampList" class="character-list stamp-list" style="display: none;">
+
+
+        <!-- ReBorn -->
+
+        <button class="character-item stamp-item" data-image="images/decorations/ReBorn.png" data-name="ReBorn">
+
+            <img src="images/decorations/ReBorn.png" alt="ReBorn">
+
+        </button>
+
+
+        <!-- 高専祭 -->
+
+        <button class="character-item stamp-item" data-image="images/decorations/kosensai.png" data-name="高専祭">
+
+            <img src="images/decorations/kosensai.png" alt="高専祭">
+
+        </button>
+
+
+        <!-- 2026 -->
+
+        <button class="character-item stamp-item" data-image="images/decorations/2026.png" data-name="2026">
+
+            <img src="images/decorations/2026.png" alt="2026">
+
+        </button>
+
+
+      </div>
+
+      <div id="textList" class="text-panel" style="display: none;">
+
+        <input
+            type="text"
+            id="textInput"
+            class="text-input"
+            placeholder="入れたい文字を入力してね！"
+            maxlength="30"
+        >
+
+        <p class="text-option-title">文字色</p>
+
+        <div class="color-list">
+            <button class="color-button active" data-color="#ffffff" style="background:#ffffff;"></button>
+            <button class="color-button" data-color="#ffb6c9" style="background:#ffb6c9;"></button>
+            <button class="color-button" data-color="#ff6f91" style="background:#ff6f91;"></button>
+            <button class="color-button" data-color="#ffdf70" style="background:#ffdf70;"></button>
+            <button class="color-button" data-color="#8ed8ff" style="background:#8ed8ff;"></button>
+            <button class="color-button" data-color="#333333" style="background:#333333;"></button>
+        </div>
+
+        <p class="text-option-title">ふち色</p>
+
+        <div class="outline-list">
+
+            <button class="outline-button active" data-outline="none">
+                なし
+            </button>
+
+            <button class="outline-button" data-outline="#ffffff">
+                白
+            </button>
+
+            <button class="outline-button" data-outline="#c94d70">
+                ピンク
+            </button>
+
+            <button class="outline-button" data-outline="#333333">
+                黒
+            </button>
+
+        </div>
+
+        <button id="addTextButton" class="add-text-button">
+            文字を追加
+        </button>
+
+      </div>
+
+      <div id="frameList" class="frame-list" style="display: none;">
+
+        <button class="frame-item" data-image="images/frames/frame1.png">
+            <img src="images/frames/frame1.png" alt="フレーム1">
+        </button>
+
+        <button class="frame-item" data-image="images/frames/frame2.png">
+            <img src="images/frames/frame2.png" alt="フレーム2">
+        </button>
+
+        <button class="frame-item" data-image="images/frames/frame3.png">
+            <img src="images/frames/frame3.png" alt="フレーム3">
+        </button>
+
+      </div>
+
+    </section>
+
+    <button id="savePhotoButton" class="save-photo-button">
+        写真を保存する
+    </button>
+
+  </main>
+
+
+  <script src="js/photo.js"></script>
+
+</body>
+
+</html>

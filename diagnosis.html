@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts：キウイマル -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>転生する！｜なにこれ</title>
+</head>
+
+<body class="diagnosis-page">
+
+  <!-- ヘッダー -->
+  <header class="diagnosis-header">
+    <a href="index.html" class="logo">なにこれ</a>
+  </header>
+
+
+  <main>
+
+    <!-- 入力画面 -->
+    <section id="inputSection" class="diagnosis-section">
+
+      <p class="small-title">Re:Born</p>
+
+      <h1>
+        生まれ変わる<br>
+        準備はできた？
+      </h1>
+
+      <p class="description">
+        生年月日を入力して<br>
+        あなたの転生先を決めよう！
+      </p>
+
+
+      <div class="birthday-box">
+
+        <label for="birthday">
+          生年月日
+        </label>
+
+        <input
+          type="date"
+          id="birthday"
+          name="birthday"
+        >
+
+      </div>
+
+
+      <button id="rebornButton" class="reborn-button">
+        転生する！
+      </button>
+
+      <p id="errorMessage" class="error-message"></p>
+
+    </section>
+
+
+    <!-- 転生中 -->
+    <section id="loadingSection" class="diagnosis-section loading-section">
+
+      <p class="loading-title">
+        転生しています……
+      </p>
+
+      <div class="loading-symbol">
+        ✦
+      </div>
+
+      <p class="loading-dots">
+        . . .
+      </p>
+
+    </section>
+
+
+    <!-- 結果 -->
+    <section id="resultSection" class="diagnosis-section result-section">
+
+      <p class="result-small">
+        あなたに与えられた職業は
+      </p>
+
+      <h2 id="jobName">
+        勇者！！
+      </h2>
+
+      <div class="character-area">
+        <img
+          id="characterImage"
+          src=""
+          alt=""
+        >
+      </div>
+
+      <button
+        class="photo-button"
+        onclick="location.href='photo.html'"
+      >
+        写真を加工する！
+      </button>
+
+      <button
+        class="retry-button"
+        id="retryButton"
+      >
+        もう一度転生する
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <script src="js/diagnosis.js"></script>
+
+</body>
+</html>

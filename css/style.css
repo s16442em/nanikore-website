@@ -1,0 +1,1351 @@
+@charset "UTF-8";
+
+/* =========================
+   ReBorn / いろまぜ
+   トップページ用CSS
+   ========================= */
+
+/* ---- 基本設定 ---- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #df5a7d;
+  color: #ffffff;
+  font-family: "Kiwi Maru", sans-serif;
+  line-height: 1.9;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ---- ヘッダー ---- */
+
+.site-header {
+  height: 78px;
+  padding: 20px 22px;
+  background: #df5a7d;
+}
+
+.site-name {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+
+/* ---- メインビジュアル ---- */
+
+.hero {
+  position: relative;
+  min-height: 480px;
+
+  background-image:
+    linear-gradient(
+      rgba(210, 55, 100, 0.60),
+      rgba(210, 55, 100, 0.60)
+    ),
+    url("../images/decorations/background.PNG");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  padding: 62px 18px 45px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(42px, 12vw, 70px);
+  line-height: 1.45;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.hero-copy {
+  margin-top: 38px;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.hero-copy p {
+  margin: 0;
+}
+
+.hero-copy .reborn {
+  font-size: 21px;
+  letter-spacing: 0.15em;
+}
+
+
+/* ---- ボタン ---- */
+
+.entry-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 32px 20px 45px;
+  background: #df5a7d;
+}
+
+.main-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 185px;
+  min-height: 58px;
+  padding: 10px 25px;
+
+  background: #ffffff;
+  color: #d44f72;
+
+  border-radius: 999px;
+  box-shadow: 0 8px 0 #9d304e;
+
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  transition: transform 0.12s ease, border-bottom-width 0.12s ease;
+
+  cursor: pointer;
+}
+
+.main-button:active {
+  transform: translateY(5px);
+  box-shadow: 0 3px 0 #9d304e;
+}
+
+
+/* ---- 共通セクション ---- */
+
+.section {
+  padding: 40px 20px 70px;
+  background: #df5a7d;
+}
+
+.small-heading {
+  margin: 0 0 55px;
+  font-size: 21px;
+  letter-spacing: 0.16em;
+}
+
+.section-title {
+  margin: 0 0 50px;
+  font-size: 27px;
+  letter-spacing: 0.16em;
+}
+
+
+/* ---- はじめに ---- */
+
+.big-heading {
+  margin: 0 0 55px;
+  font-size: clamp(40px, 10vw, 60px);
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+}
+
+.intro p {
+  margin: 0 0 38px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+
+/* ---- 2つの遊び方 ---- */
+
+.way {
+  margin-bottom: 80px;
+}
+
+.way-number {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  opacity: 0.9;
+}
+
+.way h3 {
+  margin: 5px 0 28px;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+}
+
+.way p {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin: 0 0 28px;
+}
+
+.way .main-button {
+  margin-top: 35px;
+}
+
+
+/* ---- インスタ投稿例 ---- */
+
+.examples {
+  padding-top: 20px;
+}
+
+.example-list {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  align-items: center;
+}
+
+.example-list img {
+  width: 88%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+
+/* ---- フッター ---- */
+
+.footer {
+  padding: 30px 20px 45px;
+  background: #df5a7d;
+  text-align: center;
+}
+
+.footer-line {
+  width: 90%;
+  height: 4px;
+  margin: 0 auto 30px;
+  border-radius: 99px;
+  background: #ffffff;
+}
+
+.footer-logo {
+  margin: 0 0 35px;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+
+/* ---- PCでもスマホ風の幅にする ---- */
+
+@media (min-width: 600px) {
+  body {
+    max-width: 430px;
+    margin: 0 auto;
+  }
+}
+
+/* ========================================
+   診断ページ
+======================================== */
+
+.diagnosis-page {
+  min-height: 100vh;
+  background: #df5a7d;
+  color: white;
+}
+
+
+/* ---------- ヘッダー ---------- */
+
+.diagnosis-header {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.diagnosis-header .logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+/* ---------- 共通 ---------- */
+
+.diagnosis-section {
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 24px;
+  text-align: center;
+}
+
+
+/* ---------- 入力画面 ---------- */
+
+.small-title {
+  margin: 0 0 15px;
+
+  font-size: 18px;
+  letter-spacing: 0.15em;
+}
+
+
+.diagnosis-section h1 {
+  margin: 0;
+
+  font-size: 34px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+
+.description {
+  margin: 25px 0 35px;
+
+  font-size: 16px;
+  line-height: 2;
+}
+
+
+/* ---------- 生年月日入力 ---------- */
+
+.birthday-box {
+  width: 100%;
+  max-width: 330px;
+
+  margin-bottom: 28px;
+}
+
+.birthday-box input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 100%;
+  min-height: 56px;
+}
+
+
+.birthday-box label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 17px;
+}
+
+
+.birthday-box input {
+  box-sizing: border-box;
+
+  width: 100%;
+
+  padding: 16px 18px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: white;
+  color: #555;
+
+  font-family: "Kiwi Maru", serif;
+  font-size: 18px;
+
+  text-align: center;
+
+  box-shadow: 0 6px 0 rgba(160, 45, 80, 0.35);
+}
+
+
+.birthday-box input:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+
+/* ---------- 転生ボタン ---------- */
+
+.reborn-button {
+  width: min(100%, 300px);
+
+  padding: 17px 25px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: white;
+  color: #c84469;
+
+  font-family: "Kiwi Maru", serif;
+  font-size: 21px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 0 #a83d5b;
+
+  transition:
+    transform 0.08s,
+    box-shadow 0.08s;
+}
+
+
+/* ポコンッ */
+
+.reborn-button:active {
+  transform: translateY(6px);
+  box-shadow: 0 1px 0 #a83d5b;
+}
+
+
+.reborn-button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+
+/* ---------- エラーメッセージ ---------- */
+
+.error-message {
+  min-height: 24px;
+
+  margin-top: 18px;
+
+  font-size: 14px;
+}
+
+
+/* ---------- 転生中 ---------- */
+
+.loading-section {
+  display: none;
+}
+
+
+.loading-title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+
+.loading-symbol {
+  margin-top: 35px;
+
+  font-size: 70px;
+
+  animation: loadingRotate 1.2s infinite ease-in-out;
+}
+
+
+.loading-dots {
+  font-size: 25px;
+  letter-spacing: 0.3em;
+
+  animation: dotsBlink 1s infinite;
+}
+
+
+@keyframes loadingRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+
+@keyframes dotsBlink {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* ---------- 結果 ---------- */
+
+.result-section {
+  display: none;
+}
+
+
+.result-small {
+  margin: 0;
+
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+
+.result-section h2 {
+  margin: 10px 0 25px;
+
+  font-size: 44px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+
+/* キャラクター */
+
+.character-area {
+  width: min(75vw, 300px);
+  height: min(75vw, 300px);
+
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.character-area img {
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* 写真加工ボタン */
+
+.photo-button {
+  width: min(100%, 300px);
+
+  padding: 15px 20px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: white;
+  color: #c84469;
+
+  font-family: "Kiwi Maru", serif;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 0 #a83d5b;
+}
+
+
+.photo-button:active {
+  transform: translateY(5px);
+  box-shadow: 0 1px 0 #a83d5b;
+}
+
+
+/* もう一度 */
+
+.retry-button {
+  margin-top: 25px;
+
+  border: none;
+  background: transparent;
+
+  color: white;
+
+  font-family: "Kiwi Maru", serif;
+  font-size: 14px;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   写真加工ページ
+======================================== */
+
+.photo-page {
+  min-height: 100vh;
+
+  margin: 0;
+
+  background: #df5a7d;
+
+  color: white;
+
+  font-family: "Kiwi Maru", serif;
+
+  overflow-x: hidden;
+}
+
+
+/* ========================================
+   ヘッダー
+======================================== */
+
+.photo-header {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.photo-logo {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 23px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   メイン
+======================================== */
+
+.photo-main {
+  width: 100%;
+}
+
+
+/* ========================================
+   写真編集エリア
+======================================== */
+
+.editor-area {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 15px;
+}
+
+
+/* 写真を表示する場所 */
+
+.photo-canvas {
+  position: relative;
+
+  width: min(88vw, 390px);
+
+  aspect-ratio: 9 / 16;
+
+  overflow: hidden;
+
+  background: #f7f1f3;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 0 rgba(140, 35, 65, 0.25);
+}
+
+
+/* 写真 */
+
+.main-photo {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: none;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+
+/* 写真がないとき */
+
+.photo-placeholder {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #c45170;
+
+  text-align: center;
+}
+
+
+.camera-icon {
+  font-size: 55px;
+
+  margin-bottom: 10px;
+}
+
+
+.photo-placeholder p {
+  margin: 0 0 22px;
+
+  font-size: 18px;
+}
+
+
+/* 写真選択ボタン */
+
+.photo-select-button {
+  padding: 14px 26px;
+
+  border-radius: 999px;
+
+  background: white;
+
+  color: #c84469;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #a83d5b;
+}
+
+
+/* 写真変更 */
+
+.change-photo-button {
+  margin-top: 18px;
+
+  padding: 8px 18px;
+
+  border: 1px solid rgba(255,255,255,0.7);
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  display: none;
+}
+
+
+/* ========================================
+   イラストを置く場所
+======================================== */
+
+#stickerLayer {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+
+/* 実際に写真の上に置かれるイラスト */
+
+.sticker {
+  position: absolute;
+
+  width: 130px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    translate(0px, 0px)
+    scale(1)
+    rotate(0deg);
+
+  transform-origin: center center;
+
+  user-select: none;
+
+  touch-action: none;
+
+  pointer-events: auto;
+
+  cursor: grab;
+
+  z-index: 10;
+
+  animation: stickerPop 0.35s ease-out;
+}
+
+
+.sticker:active {
+  cursor: grabbing;
+}
+
+
+/* ポンッ！ */
+
+@keyframes stickerPop {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.3)
+      rotate(-8deg);
+
+    opacity: 0;
+  }
+
+  60% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.12)
+      rotate(3deg);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      rotate(0deg);
+
+    opacity: 1;
+  }
+
+}
+
+
+/* ========================================
+   素材パネル
+======================================== */
+
+.sticker-panel {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 15px 15px 30px;
+
+  background: #c94d70;
+
+  border-radius: 25px 25px 0 0;
+}
+
+
+/* ========================================
+   カテゴリ
+======================================== */
+
+.category-tabs {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-bottom: 18px;
+}
+
+
+.category-tab {
+  padding: 9px 13px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.2);
+
+  color: white;
+
+  font-family: "Kiwi Maru", serif;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+.category-tab.active {
+  background: white;
+
+  color: #c84469;
+}
+
+
+.category-tab:disabled {
+  opacity: 0.5;
+
+  cursor: default;
+}
+
+
+/* ========================================
+   パネルタイトル
+======================================== */
+
+.panel-title {
+  text-align: center;
+
+  margin-bottom: 12px;
+}
+
+
+.panel-title span {
+  font-size: 13px;
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.8;
+}
+
+
+.panel-title p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   キャラクター一覧
+======================================== */
+
+.character-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  max-width: 500px;
+
+  margin: 0 auto;
+}
+
+
+/* キャラクター1個 */
+
+.character-item {
+  aspect-ratio: 1 / 1;
+
+  padding: 7px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.13);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.12s,
+    background 0.12s;
+}
+
+
+.character-item img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+
+  pointer-events: none;
+}
+
+
+/* タップしたとき */
+
+.character-item:active {
+  transform: scale(0.9);
+
+  background: white;
+}
+
+
+/* ========================================
+   スマホ横幅が狭い場合
+======================================== */
+
+@media (max-width: 360px) {
+
+  .character-list {
+    gap: 7px;
+  }
+
+  .character-item {
+    padding: 5px;
+  }
+
+  .category-tab {
+    padding: 8px 10px;
+
+    font-size: 12px;
+  }
+
+}
+
+/* ========================================
+   選択中のイラスト
+======================================== */
+
+.sticker.selected {
+  outline: 2px dashed white;
+
+  outline-offset: 8px;
+
+  /*filter:
+    drop-shadow(0 0 3px rgba(200, 60, 110, 0.8));*/
+}
+
+
+/* ========================================
+   削除ボタン
+======================================== */
+
+.delete-sticker-button {
+  display: none;
+
+  margin-top: 12px;
+
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: white;
+
+  color: #c84469;
+
+  font-family: "Kiwi Maru", serif;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  box-shadow:
+    0 4px 0 rgba(120, 30, 60, 0.3);
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+}
+
+
+.delete-sticker-button:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 1px 0 rgba(120, 30, 60, 0.3);
+}
+
+/* ========================================
+   スタンプ
+======================================== */
+
+.stamp-item {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+
+.stamp-item img {
+  object-fit: contain;
+}
+
+
+/* スタンプ選択時 */
+
+.stamp-item:active {
+  transform: scale(0.9);
+  background: white;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.text-panel {
+  width: 100%;
+  padding: 10px 0 20px;
+}
+
+.text-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 999px;
+  background: white;
+  color: #c94d70;
+  font-family: "Kiwi Maru", serif;
+  font-size: 15px;
+  outline: none;
+}
+
+.text-input::placeholder {
+  color: #d99aaa;
+}
+
+.add-text-button {
+  margin-top: 10px;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 999px;
+  background: white;
+  color: #d65378;
+  font-family: "Kiwi Maru", serif;
+  font-size: 14px;
+  box-shadow: 0 3px 0 rgba(150, 50, 80, 0.2);
+}
+
+.add-text-button:active {
+  transform: scale(0.95);
+}
+
+/* 写真の上に置く文字 */
+
+.photo-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  pointer-events: auto;
+
+  transform:
+    translate(-50%, -50%)
+    translate(0px, 0px)
+    scale(1)
+    rotate(0deg);
+
+  color: white;
+  font-family: "Kiwi Maru", serif;
+  font-size: 28px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  /*text-shadow:
+    2px 2px 0 rgba(100, 40, 60, 0.35);*/
+
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+
+  cursor: grab;
+}
+
+.photo-text.selected {
+  outline: 2px dashed white;
+  outline-offset: 5px;
+}
+
+/* =========================
+   TEXT OPTIONS
+========================= */
+
+.text-option-title {
+  margin: 14px 0 7px;
+  font-size: 13px;
+  color: white;
+}
+
+/* 文字色 */
+
+.color-list {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.color-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 2px solid rgba(255,255,255,0.7);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.color-button.active {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ふち色 */
+
+.outline-list {
+  display: flex;
+  gap: 7px;
+}
+
+.outline-button {
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 999px;
+  padding: 7px 13px;
+
+  background: rgba(255,255,255,0.2);
+  color: white;
+
+  font-family: "Kiwi Maru", serif;
+  font-size: 12px;
+}
+
+.outline-button.active {
+  background: white;
+  color: #d65378;
+}
+
+/* =========================
+   FRAME
+========================= */
+
+.frame-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 5px 0 20px;
+}
+
+.frame-item {
+  border: none;
+  padding: 5px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.18);
+}
+
+.frame-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.frame-item:active {
+  transform: scale(0.94);
+  background: white;
+}
+
+.photo-frame {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+
+  pointer-events: none;
+
+  z-index: 10;
+}
+
+/* =========================
+   SAVE
+========================= */
+
+.save-photo-button {
+  display: block;
+
+  width: min(88vw, 390px);
+
+  margin: 20px auto 30px;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: white;
+  color: #d65378;
+
+  font-family: "Kiwi Maru", serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  box-shadow: 0 4px 0 rgba(150, 50, 80, 0.25);
+}
+
+.save-photo-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(150, 50, 80, 0.25);
+}
+
+.character-type-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.character-type-tab {
+  flex: 1;
+  padding: 9px 5px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.25);
+  color: white;
+
+  font-family: "Kiwi Maru", serif;
+  font-size: 13px;
+}
+
+.character-type-tab.active {
+  background: white;
+  color: #d65378;
+}
+
+.example-description {
+  margin: 8px 4px 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
